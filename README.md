@@ -1,10 +1,10 @@
-# nanoserv
+## nanoserv
 This is a trivial http server that serves json from the EndPoints defined in the
 yaml config file. I was interested in looking at the net/http and yaml packages,
 and mocking up some apis. The size/lines of the code for this nano server is
 surpisingly small. 
 
-## The configuration schema
+### The configuration schema
 
 An example yaml configuration: 
 
@@ -68,6 +68,22 @@ would return
 { "EndPoints":["/hello1/","/hello2/"],
   "ServerName":["nanoserver"],
   "Version":["0.0.2"] }
+```
+
+### Build and Run
+
+To build and run this simple utility: 
+
+```shell
+$ go get github.com/gorilla/handlers github.com/gorilla/mux gopkg.in/yaml.v2
+$ go build
+$ go install
+```
+
+Assuming you have the go bin path in your PATH:
+
+```shell
+$ nanoserv config.yml
 ```
 
 
