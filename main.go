@@ -1,4 +1,4 @@
-// Use of this source code is governed by the BSD 3-Clause 
+// Use of this source code is governed by the BSD 3-Clause
 // License that can be found in the LICENSE file.
 
 //  This is a trivial http server that serves json from the EndPoints defined in the
@@ -95,8 +95,8 @@ func (n *NanoServer) InitNanoServer(sconf *NanoServerConfigInfo) {
 }
 
 func NanoServUsage() {
-    helpstring := "\nUsage: nanoserv <config.yml>\nSee the manual for the basic config.yml schema...\n\n"
-    fmt.Printf(helpstring)
+	helpstring := "\nUsage: nanoserv <config.yml>\nSee the manual for the basic config.yml schema...\n\n"
+	fmt.Printf(helpstring)
 }
 
 func main() {
@@ -108,7 +108,6 @@ func main() {
 	}
 	yamlFname := flag.Args()[0]
 	srvrconf := NanoServerLoadConfig(yamlFname)
-    fmt.Println(srvrconf)
 	nanSrv.InitNanoServer(&srvrconf)
 	loggedRouter := handlers.LoggingHandler(os.Stdout, nanSrv.router)
 	err := http.ListenAndServe(":"+nanSrv.Port, loggedRouter)

@@ -1,7 +1,7 @@
-// Use of this source code is governed by the BSD 3-Clause 
+// Use of this source code is governed by the BSD 3-Clause
 // License that can be found in the LICENSE file.
 
-// This supports the trivial http server by handling 
+// This supports the trivial http server by handling
 // the simple yaml config files.
 package main
 
@@ -29,7 +29,7 @@ type NanoServerConfigInfo struct {
 		Port          int    `yaml:"port"`
 		MaxUriRequest int    `yaml:"maxUriRequest"`
 		Root          string `yaml:"root"`
-	    Version       string `yaml:"version"`
+		Version       string `yaml:"version"`
 		EndPoints     []struct {
 			Name string `yaml:"name"`
 			Uri  string `yaml:"uri"`
@@ -64,7 +64,7 @@ func NanoServerLoadConfig(configpath string) NanoServerConfigInfo {
 		server.Config.Name = NSERVER
 	}
 
-    if server.Config.Version == "" {
+	if server.Config.Version == "" {
 		server.Config.Version = NVERSION
 	}
 
